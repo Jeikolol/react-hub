@@ -9,9 +9,10 @@ export interface Platform {
 }
 
 export interface Game {
-    id: number
+    id: number,
     name: string,
     background_image: string,
+    metacritic: number,
     parent_platforms: { platform: Platform }[]
 }
 
