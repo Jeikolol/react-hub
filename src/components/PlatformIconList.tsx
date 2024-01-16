@@ -18,7 +18,7 @@ interface Props {
 	platforms: Platform[]
 }
 
-function PlatformIconList({ platforms }: Props) {
+function PlatformIconList({ platforms }: Readonly<Props>) {
 	const iconMap: { [key: string]: IconType } = {
 		pc: FaWindows,
 		playstation: FaPlaystation,
