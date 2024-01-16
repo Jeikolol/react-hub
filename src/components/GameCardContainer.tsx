@@ -4,10 +4,11 @@ import { ReactNode } from 'react'
 interface Props {
 	children: ReactNode
 }
-function GameCardContainer({ children }: Props) {
+
+function GameCardContainer({ children }: Readonly<Props>) {
 	return (
 		<Box
-			width={'300px'}
+			width={'100%'}
 			borderRadius={10}
 			overflow={'hidden'}>
 			{children}
