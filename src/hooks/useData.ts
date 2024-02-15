@@ -29,7 +29,12 @@ function useData<T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?:
                 setIsLoading(false);
             });
 
-        return () => controller.abort();
+        setTimeout(() => {
+            if (!data) {
+                return () => controller.abort();
+            }
+
+        }, 300);
     }, deps ? [...deps] : []);
 
 
