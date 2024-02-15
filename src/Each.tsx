@@ -1,7 +1,7 @@
 import { Children, ReactNode } from 'react'
 
 interface Props<T> {
-	of: T[]
+	of: T[] | []
 	render: (item: T, index: number) => ReactNode
 }
 
