@@ -1,5 +1,5 @@
+import { GameQuery } from "../App";
 import useData from "./useData"
-import { Genre } from "./useGenres";
 import { Platform } from "./usePlatform";
 
 
@@ -11,8 +11,8 @@ export interface Game {
     parent_platforms: { platform: Platform }[]
 }
 
-function useGames(selectedGenre: Genre | null) {
-    return useData<Game>('/games', { params: { genres: selectedGenre?.id } }, [selectedGenre?.id])
+function useGames(gameQuery: GameQuery) {
+    return useData<Game>('/games', { params: { genres: gameQuery?.genre?.id, parent_platforms: gameQuery.platform?.id } }, [gameQuery])
 }
 
 export default useGames;
