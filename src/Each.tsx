@@ -6,8 +6,12 @@ interface Props<T> {
 }
 
 function Each<T>({ render, of }: Props<T>) {
-	return Children.toArray(
-		of.map((item: T, index: number) => render(item, index)),
+	return (
+		<>
+			{Children.toArray(
+				of.map((item: T, index: number) => render(item, index)),
+			)}
+		</>
 	)
 }
 
